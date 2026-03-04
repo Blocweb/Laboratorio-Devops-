@@ -17,3 +17,12 @@ class Reserva(BaseModel):
 
 # Lista en memoria
 reservas: List[Reserva] = []
+
+# Endpoint POST
+@app.post("/reservas")
+def crear_reserva(reserva: Reserva):
+    reservas.append(reserva)
+    return {
+        "mensaje": "Reserva registrada correctamente",
+        "reserva": reserva
+    }
