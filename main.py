@@ -26,3 +26,8 @@ def crear_reserva(reserva: Reserva):
         "mensaje": "Reserva registrada correctamente",
         "reserva": reserva
     }
+    
+# Endpoint GET
+@app.get("/reservas")
+def obtener_reservas():
+    return reservas
